@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Keisuke KATO -- Developer -- @k_kato
 
 # THANKS
 
-    <name>
+    MEAN.js
 
 # TECHNOLOGY COLOPHON
 
