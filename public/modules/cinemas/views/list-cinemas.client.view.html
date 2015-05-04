@@ -1,0 +1,26 @@
+<section data-ng-controller="CinemasController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Cinemas</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="cinema in cinemas" data-ng-href="#!/cinemas/{{cinema._id}}" class="list-group-item">
+            <small class="list-group-item-text">
+                Posted on
+                <span data-ng-bind="cinema.created | date:'yyyy-MM-dd h:mma'"></span>
+                <br/>
+                Updated on
+                <span data-ng-bind="cinema.updated | date:'yyyy-MM-dd h:mma'"></span>
+                by
+                <span data-ng-bind="cinema.user.displayName"></span>
+            </small>
+            <h4 class="list-group-item-heading" data-ng-bind="cinema.name"></h4>
+
+            <div ng-controller="RatingCtrl">
+                <rating ng-model="cinema.rate" id="rate" max="max" readonly="true"></rating>
+            </div>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!cinemas.$resolved || cinemas.length">
+        No Cinemas yet, why don't you <a href="/#!/cinemas/create">create one</a>?
+    </div>
+</section>
