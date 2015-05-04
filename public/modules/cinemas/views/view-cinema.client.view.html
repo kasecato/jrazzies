@@ -1,0 +1,30 @@
+<section data-ng-controller="CinemasController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1 data-ng-bind="cinema.name"></h1>
+    </div>
+    <div ng-controller="RatingCtrl">
+        <rating ng-model="cinema.rate" max="max" readonly="true"></rating>
+    </div>
+    <br/>
+    <textarea data-ng-bind="cinema.comment" rows="12" readonly style="width: 100%"></textarea>
+
+    <div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == cinema.user._id))">
+        <a class="btn btn-primary" href="/#!/cinemas/{{cinema._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" data-ng-click="remove();">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    <small>
+        <em class="text-muted">
+            Posted on
+            <span data-ng-bind="cinema.created | date:'yyyy-MM-dd h:mma'"></span>
+            <br/>
+            Updated on
+            <span data-ng-bind="cinema.updated | date:'yyyy-MM-dd h:mma'"></span>
+            by
+            <span data-ng-bind="cinema.user.displayName"></span>
+        </em>
+    </small>
+</section>
