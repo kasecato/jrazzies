@@ -1,4 +1,16 @@
-Japan Golden Raspberry Awards
+#Japan Golden Raspberry Awards
+
+##Quick Install
+
+```bash
+$ npm install
+```
+
+## Running Your Application
+
+```bash
+$ grunt
+```
 
 ## License
 (The MIT License)
